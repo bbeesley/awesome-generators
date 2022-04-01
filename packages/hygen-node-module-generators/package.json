@@ -1,6 +1,6 @@
 {
   "name": "hygen-node-module-generators",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generators for node modules",
   "keywords": [
     "hygen",

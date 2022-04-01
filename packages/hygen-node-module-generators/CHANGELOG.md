@@ -1,3 +1,10 @@
+# [hygen-node-module-generators-v1.0.1](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.0.0...hygen-node-module-generators@1.0.1) (2022-04-01)
+
+
+### Bug Fixes
+
+* correct a syntax error in ava config ([f329b98](https://github.com/bbeesley/awesome-generators/commit/f329b9808d965cfc86cf99e8a32632abc0b5bd22))
+
 # hygen-node-module-generators-v1.0.0 (2022-04-01)
 
 
