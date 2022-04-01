@@ -9,7 +9,7 @@ module.exports = {
   verbose: true,
   extensions: {
     ts: 'module',
-    js: 'module',
+    js: true,
   },
   nodeArguments: [
     '--loader=ts-node/esm',
