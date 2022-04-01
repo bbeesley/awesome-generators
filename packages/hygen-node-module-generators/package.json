@@ -1,13 +1,13 @@
 {
   "name": "hygen-node-module-generators",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generators for node modules",
   "keywords": [
     "hygen",
     "generator",
     "node"
   ],
-  "type":"module",
+  "type": "module",
   "author": "Bill Beesley <bill.beesley@dazn.com>",
   "homepage": "https://github.com/bbeesley/awesome-generators",
   "license": "MIT",
