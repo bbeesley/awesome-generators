@@ -1,6 +1,6 @@
 {
   "name": "hygen-github-action-generators",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generators for standard github actions workflows",
   "keywords": [
     "hygen",
