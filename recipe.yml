@@ -1,0 +1,65 @@
+name: catalogue-test-data-generation
+ingredients:
+  - "hygen-github-action-generators"
+  - "hygen-node-module-generators"
+instructions:
+  - ingredient: "hygen-github-action-generators"
+    generator: gha-workflows
+    action: new
+    args:
+      - option: nodeVersion
+        value: 16.14.2
+  - ingredient: "hygen-node-module-generators"
+    generator: node-module
+    action: new
+    args:
+      - option: name
+        value: root
+      - option: description
+        value: A collection of hygen generators for stuff I build
+      - option: author
+        value: Bill Beesley <bill@beesley.dev>
+      - option: repoName
+        value: https://github.com/bbeesley/awesome-generators
+      - option: nodeVersion
+        value: 16.14.2
+      - option: supportNodeVersion
+        value: 14.18.0
+  - ingredient: "hygen-node-module-generators"
+    generator: node-module
+    action: new
+    basePath: packages/hygen-node-module-generators
+    args:
+      - option: name
+        value: hygen-node-module-generators
+      - option: description
+        value: Generators for node modules
+      - option: author
+        value: Bill Beesley <bill@beesley.dev>
+      - option: repoName
+        value: https://github.com/bbeesley/awesome-generators
+      - option: nodeVersion
+        value: 16.14.2
+      - option: supportNodeVersion
+        value: 14.18.0
+      - option: lernaPackage
+        value: 'true'
+  - ingredient: "hygen-node-module-generators"
+    generator: node-module
+    action: new
+    basePath: packages/hygen-github-action-generators
+    args:
+      - option: name
+        value: hygen-github-action-generators
+      - option: description
+        value: Generators for standard github actions workflows
+      - option: author
+        value: Bill Beesley <bill@beesley.dev>
+      - option: repoName
+        value: https://github.com/bbeesley/awesome-generators
+      - option: nodeVersion
+        value: 16.14.2
+      - option: supportNodeVersion
+        value: 14.18.0
+      - option: lernaPackage
+        value: 'true'
