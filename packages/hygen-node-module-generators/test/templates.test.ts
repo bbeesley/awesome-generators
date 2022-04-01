@@ -54,7 +54,7 @@ async function cleanup() {
     await rm(resolve(templatesPath, 'package.json'));
     await rm(testRoot, { recursive: true });
   } catch (e) {
-    console.error('Error removing test output directory', e);
+    // console.error('Error removing test output directory', e);
     // throw e;
   }
 }
@@ -87,3 +87,17 @@ test.serial('should create expected files', async (t) => {
   const filesCreated = await readdir(testPath);
   t.snapshot(filesCreated);
 });
+test.serial(
+  'should omit top level files when creating lerna packages',
+  async (t) => {
+    await execa(
+      'hygen',
+      ['node-module', 'new', '--lerna-package', 'true', ...defaultArgs],
+      execaOptions,
+    );
+    const filesCreated = await readdir(testPath);
+    t.falsy(filesCreated.includes('tsconfig-lint.json'));
+    t.falsy(filesCreated.includes('.nvmrc'));
+    t.falsy(filesCreated.includes('.eslintrc.cjs'));
+  },
+);
