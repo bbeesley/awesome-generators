@@ -42,7 +42,7 @@ jobs:
         run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           cp .npmrc ~/
-          npm run lerna -- exec -- cp ../../.npmrc .
+          npx lerna exec -- cp ../../.npmrc .
       - name: publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
