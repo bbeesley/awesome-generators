@@ -38,7 +38,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-unicorn": "^41.0.1",
+    "eslint-plugin-unicorn": "^42.0.0",
     "execa": "^6.1.0",
     "hygen": "^6.2.0",
     "lerna": "^4.0.0",
