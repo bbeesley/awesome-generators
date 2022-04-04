@@ -1,5 +1,5 @@
 ---
-to: "<%= !!locals.lernaPackage ? null : '.nvmrc' %>"
+to: "<%= locals.isLernaChild ? null : '.nvmrc' %>"
 ---
 
 <%= nodeVersion %>

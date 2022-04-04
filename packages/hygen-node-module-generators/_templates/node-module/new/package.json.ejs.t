@@ -31,7 +31,7 @@ to: package.json
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-<% if(!locals.lernaPackage){ -%>
+<% if(!locals.isLernaChild){ -%>
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
     "@babel/eslint-parser": "^7.17.0",
@@ -70,7 +70,7 @@ to: package.json
     "semantic-release": "^19.0.2",
     "sinon": "^13.0.1"
 <% } -%>
-  },
+  }<% if(!locals.isLernaRoot){ -%>,
   "release": {
     "branches": [
       "main",
@@ -119,4 +119,5 @@ to: package.json
       ]
     ]
   }
+<% } -%>
 }

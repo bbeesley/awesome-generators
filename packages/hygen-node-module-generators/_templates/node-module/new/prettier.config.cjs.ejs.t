@@ -1,5 +1,5 @@
 ---
-to: prettier.config.cjs
+to: "<%= locals.isLernaChild ? null : 'prettier.config.cjs' %>"
 ---
 module.exports = {
   trailingComma: 'all',

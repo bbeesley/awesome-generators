@@ -1,5 +1,5 @@
 ---
-to: "<%= !!locals.lernaPackage ? null : '.eslintrc.cjs' %>"
+to: "<%= locals.isLernaChild ? null : '.eslintrc.cjs' %>"
 ---
 /* eslint-disable prettier/prettier, @typescript-eslint/no-var-requires, import/extensions */
 const {

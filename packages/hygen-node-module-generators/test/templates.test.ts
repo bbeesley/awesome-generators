@@ -1,6 +1,7 @@
 import test from 'ava';
 import { execa, Options } from 'execa';
-import { mkdir, readdir, cp, rm } from 'fs/promises';
+import { mkdir, readdir, readFile, cp, rm } from 'fs/promises';
+import { existsSync } from 'fs';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -92,12 +93,35 @@ test.serial(
   async (t) => {
     await execa(
       'hygen',
-      ['node-module', 'new', '--lerna-package', 'true', ...defaultArgs],
+      ['node-module', 'new', '--is-lerna-child', 'true', ...defaultArgs],
       execaOptions,
     );
     const filesCreated = await readdir(testPath);
     t.falsy(filesCreated.includes('tsconfig-lint.json'));
     t.falsy(filesCreated.includes('.nvmrc'));
     t.falsy(filesCreated.includes('.eslintrc.cjs'));
+  },
+);
+test.serial('should omit src files when creating lerna root', async (t) => {
+  await execa(
+    'hygen',
+    ['node-module', 'new', '--is-lerna-root', 'true', ...defaultArgs],
+    execaOptions,
+  );
+  t.falsy(existsSync(resolve(testPath, 'src', 'index.ts')));
+});
+test.serial(
+  'should omit release config when creating lerna root',
+  async (t) => {
+    await execa(
+      'hygen',
+      ['node-module', 'new', '--is-lerna-root', 'true', ...defaultArgs],
+      execaOptions,
+    );
+    const pjContent = await readFile(resolve(testPath, 'package.json'), {
+      encoding: 'utf8',
+    });
+    const pj = JSON.parse(pjContent);
+    t.falsy(pj.release);
   },
 );

@@ -1,5 +1,5 @@
 ---
-to: .commitlintrc.json
+to: "<%= locals.isLernaChild ? null : '.commitlintrc.json' %>"
 ---
 {
   "extends": ["@commitlint/config-conventional"],

@@ -1,5 +1,5 @@
 ---
-to: "<%= !!locals.lernaPackage ? null : 'tsconfig-lint.json' %>"
+to: "<%= locals.isLernaChild ? null : 'tsconfig-lint.json' %>"
 ---
 {
   "compilerOptions": {
