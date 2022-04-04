@@ -1,3 +1,10 @@
+# [hygen-github-action-generators-v1.1.0](https://github.com/bbeesley/awesome-generators/compare/hygen-github-action-generators@1.0.0...hygen-github-action-generators@1.1.0) (2022-04-04)
+
+
+### Features
+
+* dont bootstrap for non lerna repos ([ababca3](https://github.com/bbeesley/awesome-generators/commit/ababca310047ce2ef115aea6199c851d6a955876))
+
 # hygen-github-action-generators-v1.0.0 (2022-04-01)
 
 
