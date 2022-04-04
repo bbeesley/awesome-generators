@@ -1,3 +1,10 @@
+# [hygen-node-module-generators-v1.1.0](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.0.2...hygen-node-module-generators@1.1.0) (2022-04-04)
+
+
+### Features
+
+* properly include and exclude files for lerna monorepos ([4122c3f](https://github.com/bbeesley/awesome-generators/commit/4122c3f7a44ef75d33dbf1a53184a164c36e429d))
+
 # [hygen-node-module-generators-v1.0.2](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.0.1...hygen-node-module-generators@1.0.2) (2022-04-04)
 
 
