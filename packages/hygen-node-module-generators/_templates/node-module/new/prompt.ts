@@ -21,7 +21,7 @@ export default [
   {
     type: 'input',
     name: 'repoName',
-    message: "What's the package repository name?",
+    message: "What's the https url for your git repo?",
     validate: (v: any) => v !== '',
   },
   {

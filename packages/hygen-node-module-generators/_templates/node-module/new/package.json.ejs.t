@@ -23,6 +23,10 @@ to: package.json
     "compile": "npm run compile:cjs && tsc --emitDeclarationOnly",
     "release": "semantic-release"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+<%= repoName %>.git"
+  },
   "author": "<%= author %>",
   "license": "MIT",
   "dependencies": {},
