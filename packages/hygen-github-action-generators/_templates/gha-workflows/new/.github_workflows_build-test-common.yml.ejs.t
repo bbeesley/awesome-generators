@@ -32,12 +32,18 @@ jobs:
         with:
           path: |
             node_modules
+<% if(locals.isLernaMonorepo == 'true'){ -%>
             packages/*/node_modules
             packages/*/dist
+<% } else {-%>
+            dist
+<% } -%>
           key: ${{ inputs.commit }}-test
       - name: install
         run: |
           npm ci
+<% if(locals.isLernaMonorepo == 'true'){ -%>
           npm run bootstrap
+<% } -%>
       - name: test
         run: npm test

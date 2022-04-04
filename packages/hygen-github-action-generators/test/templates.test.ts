@@ -1,6 +1,6 @@
 import test from 'ava';
 import { execa, Options } from 'execa';
-import { cp, mkdir, readdir, rm } from 'fs/promises';
+import { cp, mkdir, readdir, rm, readFile } from 'fs/promises';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -82,3 +82,37 @@ test.serial('should create expected files', async (t) => {
     ...workflowsFolderContent,
   ]);
 });
+
+test.serial(
+  'should include bootstrap if --is-lerna-monorepo true',
+  async (t) => {
+    await execa(
+      'hygen',
+      ['gha-workflows', 'new', ...defaultArgs, '--is-lerna-monorepo', 'true'],
+      execaOptions,
+    );
+    const workflowsFolder = resolve(testPath, '.github', 'workflows');
+    const commonWorkflowContent = await readFile(
+      resolve(workflowsFolder, 'build-test-common.yml'),
+      { encoding: 'utf8' },
+    );
+    t.regex(commonWorkflowContent, /npm run bootstrap/);
+  },
+);
+
+test.serial(
+  'should not include bootstrap without --is-lerna-monorepo true',
+  async (t) => {
+    await execa(
+      'hygen',
+      ['gha-workflows', 'new', ...defaultArgs],
+      execaOptions,
+    );
+    const workflowsFolder = resolve(testPath, '.github', 'workflows');
+    const commonWorkflowContent = await readFile(
+      resolve(workflowsFolder, 'build-test-common.yml'),
+      { encoding: 'utf8' },
+    );
+    t.notRegex(commonWorkflowContent, /npm run bootstrap/);
+  },
+);
