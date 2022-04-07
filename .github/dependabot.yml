@@ -10,6 +10,8 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    reviewers:
+      - 'dazn-atlantis-bot'
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -17,3 +19,5 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    reviewers:
+      - 'dazn-atlantis-bot'
