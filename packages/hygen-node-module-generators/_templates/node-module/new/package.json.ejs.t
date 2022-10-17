@@ -5,22 +5,29 @@ to: package.json
   "name": "<%= name.toLowerCase() %>",
   "version": "0.0.0",
   "description": "<%= description %>",
-  "main": "dist/index.js",
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js"
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
     }
   },
+  "module": "./dist/esm/index.js",
+  "main": "./dist/cjs/index.cjs",
+  "types": "./dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "test": "ava",
     "pretest": "npm run lint && npm run compile",
     "lint": "eslint .",
-    "precompile": "rm -rf generators/* || true",
-    "compile:cjs": "rm -rf dist || true && babel src --out-dir dist --extensions '.ts,.cjs,.mjs' --copy-files --include-dotfiles --no-copy-ignored --ignore '**/*.test.ts' --out-file-extension '.cjs' --config-file ./babel.config.cjs",
-    "compile": "npm run compile:cjs && tsc --emitDeclarationOnly",
+    "precompile": "rm -rf dist",
+    "compile:esm": "tsc -p tsconfig.json",
+    "compile:cjs": "babel src --out-dir dist/cjs --extensions '.ts,.cjs,.mjs' --ignore '**/*.test.ts' --source-maps --out-file-extension '.cjs'",
+    "compile": "run-p compile:*",
     "release": "semantic-release"
   },
   "repository": {
@@ -52,7 +59,7 @@ to: package.json
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
     "ava": "^4.0.1",
-    "babel-plugin-add-import-extension": "^1.6.0",
+    "babel-plugin-replace-import-extension": "^1.1.3",
     "conventional-changelog-angular": "^5.0.13",
     "cz-conventional-changelog": "^3.3.0",
     "documentation": "^13.2.5",
