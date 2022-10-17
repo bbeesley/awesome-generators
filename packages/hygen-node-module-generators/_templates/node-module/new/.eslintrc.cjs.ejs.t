@@ -395,9 +395,8 @@ const overrides = [
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['./tsconfig.json', './tsconfig-lint.json'],
+    project: ['./tsconfig-lint.json'],
     tsconfigRootDir: __dirname,
-    extraFileExtensions: ['.mjs', 'cjs'],
   },
   extends: extendsModules,
   plugins,
