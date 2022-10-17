@@ -41,7 +41,7 @@
     "eslint-plugin-unicorn": "^44.0.0",
     "execa": "^6.1.0",
     "hygen": "^6.2.0",
-    "lerna": "^5.0.0",
+    "lerna": "^6.0.1",
     "prettier": "^2.6.1",
     "semantic-release": "^19.0.2",
     "semantic-release-monorepo": "^7.0.5",
