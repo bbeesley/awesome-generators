@@ -1,3 +1,10 @@
+# [hygen-node-module-generators-v1.2.0](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.1.0...hygen-node-module-generators@1.2.0) (2022-10-17)
+
+
+### Features
+
+* use new style ts compile ([d3f8deb](https://github.com/bbeesley/awesome-generators/commit/d3f8deb75b9276766ca22ba28ff4f8b790330fc6))
+
 # [hygen-node-module-generators-v1.1.0](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.0.2...hygen-node-module-generators@1.1.0) (2022-04-04)
 
 
