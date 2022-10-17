@@ -20,5 +20,6 @@ to: "<%= locals.isLernaChild ? null : 'tsconfig-lint.json' %>"
     ".*.cjs",
     "*.ts",
     ".*.ts"
-  ]
+  ],
+  "exclude": []
 }

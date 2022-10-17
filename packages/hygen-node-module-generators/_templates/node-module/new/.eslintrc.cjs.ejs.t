@@ -395,7 +395,7 @@ const overrides = [
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['./tsconfig.json'],
+    project: ['./tsconfig.json', './tsconfig-lint.json'],
     tsconfigRootDir: __dirname,
     extraFileExtensions: ['.mjs', 'cjs'],
   },
@@ -404,11 +404,11 @@ module.exports = {
   ignorePatterns: [
     'node_modules/',
     'generator/',
+    '_templates',
     '**/node_modules/**',
     '**/dist/**',
     '**/coverage/**',
     '.vscode/',
-    'packages/full/src/main/schema.ts', // ignore the compiled json schema
   ],
   rules,
   overrides,

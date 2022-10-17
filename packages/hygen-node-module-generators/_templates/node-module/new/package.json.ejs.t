@@ -73,6 +73,7 @@ to: package.json
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-unicorn": "^41.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "semantic-release": "^19.0.2",
     "sinon": "^13.0.1"
