@@ -1,3 +1,10 @@
+# [hygen-node-module-generators-v1.2.1](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.2.0...hygen-node-module-generators@1.2.1) (2022-10-17)
+
+
+### Bug Fixes
+
+* improve linting ([e524318](https://github.com/bbeesley/awesome-generators/commit/e524318d35e5de14ecc5bac6877e9a1798ee55ad))
+
 # [hygen-node-module-generators-v1.2.0](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.1.0...hygen-node-module-generators@1.2.0) (2022-10-17)
 
 
