@@ -26,7 +26,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
-    "ava": "^4.1.0",
+    "ava": "^5.0.1",
     "conventional-changelog-angular": "^5.0.13",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.12.0",
