@@ -1,3 +1,10 @@
+# [hygen-github-action-generators-v1.2.0](https://github.com/bbeesley/awesome-generators/compare/hygen-github-action-generators@1.1.0...hygen-github-action-generators@1.2.0) (2022-11-23)
+
+
+### Features
+
+* use xo instead of eslint ([7db798a](https://github.com/bbeesley/awesome-generators/commit/7db798a8f216406819a410872d6fb2ac44996733))
+
 # [hygen-github-action-generators-v1.1.0](https://github.com/bbeesley/awesome-generators/compare/hygen-github-action-generators@1.0.0...hygen-github-action-generators@1.1.0) (2022-04-04)
 
 
