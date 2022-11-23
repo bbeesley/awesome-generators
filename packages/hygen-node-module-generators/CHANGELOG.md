@@ -1,3 +1,10 @@
+# [hygen-node-module-generators-v1.3.1](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.3.0...hygen-node-module-generators@1.3.1) (2022-11-23)
+
+
+### Bug Fixes
+
+* add missing dev deps ([ebfa787](https://github.com/bbeesley/awesome-generators/commit/ebfa78742a5978294c63279e7832ed2d7e916c1b))
+
 # [hygen-node-module-generators-v1.3.0](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.2.2...hygen-node-module-generators@1.3.0) (2022-11-23)
 
 
