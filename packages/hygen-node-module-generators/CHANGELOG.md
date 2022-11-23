@@ -1,3 +1,10 @@
+# [hygen-node-module-generators-v1.3.0](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.2.2...hygen-node-module-generators@1.3.0) (2022-11-23)
+
+
+### Features
+
+* use xo instead of eslint ([7db798a](https://github.com/bbeesley/awesome-generators/commit/7db798a8f216406819a410872d6fb2ac44996733))
+
 # [hygen-node-module-generators-v1.2.2](https://github.com/bbeesley/awesome-generators/compare/hygen-node-module-generators@1.2.1...hygen-node-module-generators@1.2.2) (2022-10-17)
 
 
