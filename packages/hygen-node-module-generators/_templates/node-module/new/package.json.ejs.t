@@ -84,7 +84,9 @@ to: package.json
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "semantic-release": "^19.0.2",
-    "sinon": "^13.0.1"
+    "sinon": "^13.0.1",
+    "typescript": "^4.9.3",
+    "xo": "^0.53.1"
 <% } -%>
   }<% if(!locals.isLernaRoot){ -%>,
   "release": {
