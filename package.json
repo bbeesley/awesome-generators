@@ -3,49 +3,130 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "lint": "lerna exec --stream -- tsc --noEmit && eslint --ext '.ts' --ext '.cjs' --ext '.mjs' --ext '.js' .",
+    "lint": "xo",
     "pretest": "npm run compile && npm run lint",
     "documentation": "lerna run documentation",
     "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --tag-format='${LERNA_PACKAGE_NAME}@\\${version}'",
     "compile": "lerna run compile && lerna link",
     "test": "lerna run test --stream"
   },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json",
+        "./tsconfig-lint.json"
+      ]
+    }
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "rules": {
+      "func-names": [
+        "error",
+        "always"
+      ],
+      "no-await-in-loop": "off",
+      "@typescript-eslint/no-implicit-any-catch": "off",
+      "unicorn/no-array-reduce": "off",
+      "import/extensions": "off",
+      "n/prefer-global/process": "off"
+    },
+    "overrides": [
+      {
+        "files": "**/*.ts",
+        "rules": {
+          "@typescript-eslint/naming-convention": [
+            "error",
+            {
+              "selector": "default",
+              "format": [
+                "camelCase"
+              ]
+            },
+            {
+              "selector": "variable",
+              "format": [
+                "camelCase",
+                "UPPER_CASE",
+                "PascalCase"
+              ]
+            },
+            {
+              "selector": "parameter",
+              "format": [
+                "camelCase",
+                "PascalCase"
+              ]
+            },
+            {
+              "selector": "typeLike",
+              "format": [
+                "PascalCase"
+              ]
+            },
+            {
+              "selector": "classProperty",
+              "format": [
+                "camelCase"
+              ]
+            },
+            {
+              "selector": "objectLiteralProperty",
+              "format": null
+            },
+            {
+              "selector": "typeProperty",
+              "format": null
+            },
+            {
+              "selector": "enum",
+              "format": [
+                "PascalCase",
+                "UPPER_CASE"
+              ]
+            },
+            {
+              "selector": "enumMember",
+              "format": null
+            }
+          ]
+        }
+      },
+      {
+        "files": "**/*.test.ts",
+        "rules": {
+          "import/no-extraneous-dependencies": "off",
+          "@typescript-eslint/naming-convention": "off"
+        }
+      }
+    ]
+  },
   "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.8",
-    "@babel/eslint-parser": "^7.17.0",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-typescript": "^7.16.7",
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.18.6",
+    "@beesley/tsconfig": "^1.1.0",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.4",
+    "@semantic-release/github": "^8.0.6",
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "ava": "^5.0.1",
+    "ava": "^5.1.0",
     "conventional-changelog-angular": "^5.0.13",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.12.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-ava": "^13.2.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-unicorn": "^45.0.0",
     "execa": "^6.1.0",
-    "hygen": "^6.2.0",
-    "lerna": "^6.0.1",
-    "prettier": "^2.6.1",
-    "semantic-release": "^19.0.2",
+    "hygen": "^6.2.11",
+    "lerna": "^6.0.3",
+    "prettier": "^2.8.0",
+    "semantic-release": "^19.0.5",
     "semantic-release-monorepo": "^7.0.5",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3",
+    "xo": "^0.53.1"
   }
 }

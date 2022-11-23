@@ -1,4 +1,4 @@
-export default [
+const prompt = [
   {
     type: 'input',
     name: 'name',
@@ -30,7 +30,7 @@ export default [
     message: 'What node version should be used locally?',
     validate: (v: any) => /^(\d+\.\d+.\d+)$/.test(v),
     initial: () =>
-      (process.version.match(/^v(\d+\.\d+.\d+)/) ?? [undefined, undefined])[1],
+      (/^v(\d+\.\d+.\d+)/.exec(process.version) ?? [undefined, undefined])[1],
   },
   {
     type: 'input',
@@ -40,3 +40,5 @@ export default [
     initial: '14.18.3',
   },
 ];
+
+export default prompt;

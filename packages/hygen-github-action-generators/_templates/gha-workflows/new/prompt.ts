@@ -1,10 +1,12 @@
-export default [
+const prompt = [
   {
     type: 'input',
     name: 'nodeVersion',
     message: 'What node version should be used in ci?',
     validate: (v: any) => /^(\d+\.\d+.\d+)$/.test(v),
     initial: () =>
-      (process.version.match(/^v(\d+\.\d+.\d+)/) ?? [undefined, undefined])[1],
+      (/^v(\d+\.\d+.\d+)/.exec(process.version) ?? [undefined, undefined])[1],
   },
 ];
+
+export default prompt;

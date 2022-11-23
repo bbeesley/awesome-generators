@@ -23,7 +23,7 @@ to: package.json
   "scripts": {
     "test": "ava",
     "pretest": "npm run lint && npm run compile",
-    "lint": "eslint .",
+    "lint": "xo",
     "precompile": "rm -rf dist",
     "compile:esm": "tsc -p tsconfig.json",
     "compile:cjs": "babel src --out-dir dist/cjs --extensions '.ts,.cjs,.mjs' --ignore '**/*.test.ts' --source-maps --out-file-extension '.cjs'",
@@ -36,14 +36,34 @@ to: package.json
   },
   "author": "<%= author %>",
   "license": "MIT",
+  "eslintConfig": {
+		"parserOptions": {
+      "project": ["./tsconfig.json", "./tsconfig-lint.json"]
+    }
+	},
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "rules": {
+      "func-names": [
+        "error",
+        "always"
+      ],
+      "no-await-in-loop": "off",
+      "@typescript-eslint/no-implicit-any-catch": "off",
+      "unicorn/no-array-reduce": "off",
+      "import/extensions": "off",
+      "n/prefer-global/process": "off"
+    }
+  },
   "dependencies": {},
   "devDependencies": {
 <% if(!locals.isLernaChild){ -%>
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
-    "@babel/eslint-parser": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
+    "@beesley/tsconfig": "^1.1.0",
     "@commitlint/cli": "^16.2.1",
     "@commitlint/config-conventional": "^16.2.1",
     "@semantic-release/changelog": "^6.0.1",
@@ -56,23 +76,11 @@ to: package.json
     "@types/jsdom": "^16.2.14",
     "@types/sinon": "^10.0.11",
     "@types/yargs": "^17.0.8",
-    "@typescript-eslint/eslint-plugin": "^5.13.0",
-    "@typescript-eslint/parser": "^5.13.0",
     "ava": "^4.0.1",
     "babel-plugin-replace-import-extension": "^1.1.3",
     "conventional-changelog-angular": "^5.0.13",
     "cz-conventional-changelog": "^3.3.0",
     "documentation": "^13.2.5",
-    "eslint": "^8.10.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.4.0",
-    "eslint-plugin-ava": "^13.2.0",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-unicorn": "^41.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "semantic-release": "^19.0.2",

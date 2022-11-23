@@ -1,13 +1,11 @@
+import { cp, mkdir, readdir, rm, readFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { execa, type Options } from 'execa';
 import test from 'ava';
-import { execa, Options } from 'execa';
-import { cp, mkdir, readdir, rm, readFile } from 'fs/promises';
-import { dirname, resolve } from 'path';
-import { fileURLToPath } from 'url';
 
-/* eslint-disable @typescript-eslint/naming-convention */
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-/* eslint-enable @typescript-eslint/naming-convention */
 
 const testRoot = resolve(__dirname, 'test-root');
 const testPath = resolve(testRoot, 'test-output');
@@ -42,8 +40,8 @@ async function setup() {
       resolve(__dirname, '../config-stubs/tsconfig.json'),
       resolve(templatesPath, 'tsconfig.json'),
     );
-  } catch (e) {
-    // console.error('Error creating test output directory', e);
+  } catch {
+    // Console.error('Error creating test output directory', e);
     // throw e;
   }
 }
@@ -53,8 +51,8 @@ async function cleanup() {
     await rm(resolve(templatesPath, 'tsconfig.json'));
     await rm(resolve(templatesPath, 'package.json'));
     await rm(testRoot, { recursive: true });
-  } catch (e) {
-    // console.error('Error removing test output directory', e);
+  } catch {
+    // Console.error('Error removing test output directory', e);
     // throw e;
   }
 }
