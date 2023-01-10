@@ -8,7 +8,7 @@ instructions:
     action: new
     args:
       - option: nodeVersion
-        value: 16.14.2
+        value: 18.13.0
   - ingredient: "hygen-node-module-generators"
     generator: node-module
     action: new
@@ -22,7 +22,7 @@ instructions:
       - option: repoName
         value: https://github.com/bbeesley/awesome-generators
       - option: nodeVersion
-        value: 16.14.2
+        value: 18.13.0
       - option: supportNodeVersion
         value: 14.18.0
   - ingredient: "hygen-node-module-generators"
@@ -39,7 +39,7 @@ instructions:
       - option: repoName
         value: https://github.com/bbeesley/awesome-generators
       - option: nodeVersion
-        value: 16.14.2
+        value: 18.13.0
       - option: supportNodeVersion
         value: 14.18.0
       - option: lernaPackage
@@ -58,7 +58,7 @@ instructions:
       - option: repoName
         value: https://github.com/bbeesley/awesome-generators
       - option: nodeVersion
-        value: 16.14.2
+        value: 18.13.0
       - option: supportNodeVersion
         value: 14.18.0
       - option: lernaPackage

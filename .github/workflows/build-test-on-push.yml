@@ -27,17 +27,14 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v3
         with:
-          node-version: '16.14.2'
+          node-version: '18.13.0'
       - uses: actions/cache@v3
         with:
           path: |
             node_modules
             packages/*/node_modules
             packages/*/dist
-          key: ${{ github.sha }}-publish
-          restore-keys: |
-            ${{ github.sha }}-test
-            ${{ github.sha }}-publish
+          key: ${{ github.sha }}-test
       - name: npm auth
         run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
@@ -46,6 +43,6 @@ jobs:
       - name: publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_PA_TOKEN }}
+          GH_TOKEN: ${{ secrets.MY_PA_TOKEN }}
         run: |
           npm run release
